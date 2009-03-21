@@ -24,7 +24,7 @@ $pod = MP3::Podcast->new($dir,'http://animaadversa.es');
 my $subdir = 'music';
 my $rss =  $pod->podcast($subdir, "Anima Adversa: El Otro Yo");
 isa_ok( $rss, 'XML::RSS' );
-is( $rss->{'items'}->[0]->{title} eq 'Alter Ego', 1, "RSS" );
+is( $rss->{'items'}->[0]->{title}, 'En tus Brazos', "RSS" );
 
 
 
