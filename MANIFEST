@@ -10,3 +10,5 @@ MANIFEST			This list of files
 META.yml
 README
 t/1.t
+t/music/4-En tus Brazos.mp3
+t/music/07-Alter Ego.mp3
