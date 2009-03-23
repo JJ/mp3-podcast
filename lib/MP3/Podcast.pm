@@ -7,9 +7,9 @@ MP3::Podcast - Perl extension for podcasting directories full of MP3 files
 =head1 SYNOPSIS
 
   use MP3::Podcast;
-  my $dirbase = shift;
-  my $urlbase = shift;
-  my $dir = shift;
+  my $dirbase = shift; #Base directory, e.g. Music
+  my $urlbase = shift; #Base URL that dir is mapped to
+  my $dir = shift; # Subdir, e.g. 2009-02-28
   my $pod = MP3::Podcast->new($dirbase,$urlbase);
   my $rss = $pod->podcast( $dir, "This is a test" );
   print $rss->as_string;
@@ -26,7 +26,9 @@ their ID tags completed.
 
 The bundle includes two programs in the C<examples> dir: C<gen-podcast.pl>, 
 used this way:
+
   bash% ./gen-podcast.pl <dirbase> <urlbase> <dir to scan>
+
 which generates a static RSS from a dir, and C<podcast.cgi>, to use from a
 webserver. To use it, copy C<podcast.cgi> and C<podcast.conf> to a cgi-serviceable
 dir; edit C<podcast.conf> to your liking and copy it to the directory you want.
@@ -37,8 +39,7 @@ C<http://my.host.com/cgi-bin/podcast.cgi/[dirname].rss>
 The name of the directory to scan will be taken from the URI
 
 This new version includes in the test directory MP3s by the Spanish
-    group L<Anima Adversa|http://animaadversa.es>, which are freely
-    distributed under a CC license.
+    group Anima Adversa (which you can find at L<http://animaadversa.es>), which are freely distributed under a CC license.
 
 =head1 METHODS
 
@@ -53,11 +54,11 @@ use URI;
 use MP3::Info;
 use POSIX qw(strftime);
 
-our $VERSION = '0.06_1aa';
+our $VERSION = '0.06_2aa';
 
 # Preloaded methods go here.
 
-=item new
+=item new( $base_directory, $base_url )
 
 Creates the object. Takes basic info as input: the address of the
     directory that will
@@ -75,7 +76,7 @@ sub new {
   return $self;
 }
 
-=item podcast
+=item podcast( $subdirectory, $podcast_title)
 
 Creates the podcast for a dir, that is, an RSS file with enclosures 
 containing the MP3s it can find in that dir. Information to fill RSS 
@@ -144,9 +145,10 @@ Info on podcasting:
 
 =item Podcastamatic: http://bradley.chicago.il.us/projects/podcastamatic/readme.html
 
-=item Examples in the C<examples> dir.
-
 =back
+
+Check out also the examples in the C<examples> dir in the bundle.
+
 
 
 =head1 AUTHOR
