@@ -33,6 +33,7 @@ generate an RSS for the supplied (and CC-licensed) MP3s  supplied
 
 
 DEPENDENCIES
+=========
 
 This module requires these other modules and libraries:
 
@@ -40,6 +41,7 @@ This module requires these other modules and libraries:
   MP3::Info 1.13
 
 COPYRIGHT AND LICENCE
+===============
 
 Copyright (C) 2005-2013 Juan Julian Merelo Guervos
 
