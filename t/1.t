@@ -1,11 +1,5 @@
 #!/usr/bin/perl
 
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl 1.t'
-
-#########################
-
-# change 'tests => 1' to 'tests => last_test_to_print';
 use lib '../lib';
 
 use Test::More qw(no_plan);
@@ -24,7 +18,7 @@ $pod = MP3::Podcast->new($dir,'http://animaadversa.es');
 my $subdir = 'music';
 my $rss =  $pod->podcast($subdir, "Anima Adversa: El Otro Yo");
 isa_ok( $rss, 'XML::RSS' );
-is( $rss->{'items'}->[0]->{title}, 'En tus Brazos', "RSS" );
-
-
+is( $rss->{'items'}->[0]->{title}, 'Alter Ego', "RSS" );
+is( $rss->{'items'}->[1]->{title}, 'En tus Brazos', "RSS" );
+is( scalar(@{$rss->{'items'}}), 2, 'RSS items' );
 
