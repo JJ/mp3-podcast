@@ -1,4 +1,4 @@
-name: "Checks the github action using itself"
+name: "Tests module"
 on: [push,pull_request]
 
 jobs:
@@ -8,7 +8,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Install modules by apt
-        run: sudo apt-get install libxml-rss-perl libmp3-info-perl liburi-perl
+        run: sudo apt-get install libxml-rss-perl libmp3-info-perl
       - name: Prepare for tests
         run: |
           perl Makefile.PL
