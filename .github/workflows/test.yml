@@ -13,4 +13,4 @@ jobs:
           perl Makefile.PL
           make
       - name: Perform tests
-        run: make distest
+        run: make disttest
