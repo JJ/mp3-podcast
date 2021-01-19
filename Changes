@@ -1,3 +1,7 @@
+2021-01-19  jmerelo  <jmerelo@princess-carolyn>
+
+	* lib/MP3/Podcast.pm: Preparing for next release, since it had apparently disappeared from CPAN. Adds utf8 files thanks to Ypid, taken from their branch.
+
 2009-03-19  Juan Julian Merelo Guervos  <jmerelo@geneura.ugr.es>
 
 	* Makefile.PL: Added URI to prerrequisites.

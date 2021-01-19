@@ -21,10 +21,10 @@ Create podcast easily from directories, using MP3's own info.
 =head1 DESCRIPTION
 
 Creates a podcast, basically a RSS feed for a directory full of MP3 files.
-Takes information from the MP3 files themselves; it needs MP3 files with 
+Takes information from the MP3 files themselves; it needs MP3 files with
 their ID tags completed.
 
-The bundle includes two programs in the C<examples> dir: C<gen-podcast.pl>, 
+The bundle includes two programs in the C<examples> dir: C<gen-podcast.pl>,
 used this way:
 
   bash% ./gen-podcast.pl <dirbase> <urlbase> <dir to scan>
@@ -56,7 +56,7 @@ use POSIX qw(strftime);
 use utf8;
 use Encode qw(decode);
 
-our $VERSION = '0.06_2aa';
+our $VERSION = '0.07';
 
 # Preloaded methods go here.
 
