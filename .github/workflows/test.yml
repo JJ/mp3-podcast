@@ -7,19 +7,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-cpan-modules
-        with:           # cpan cache files are stored in `~/.cpan/sources` on Linux/macOS
-          path: ~/.cpan/sources
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Makefile.PL') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
+      - name: Install modules by apt
+        run: sudo apt-get install libxml-rss-perl libmp3-info-perl liburi-perl
       - name: Prepare for tests
         run: |
-          sudo cpan MP3::Info XML::RSS URI
           perl Makefile.PL
           make
       - name: Perform tests
