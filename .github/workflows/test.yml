@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Prepare for tests
         run: |
-          sudo cpan MP3::Info MP3::Info URI
+          sudo cpan MP3::Info XML::RSS URI
           perl Makefile.PL
           make
       - name: Perform tests
