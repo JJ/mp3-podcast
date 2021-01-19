@@ -1,0 +1,16 @@
+name: "Checks the github action using itself"
+on: [push,pull_request]
+
+jobs:
+  self_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Prepare for tests
+        run: |
+          cpanm MP3::Info
+          perl Makefile.PL
+          make
+      - name: Perform tests
+        run: make distest
