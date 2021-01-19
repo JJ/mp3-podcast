@@ -10,5 +10,5 @@ WriteMakefile(
 				    URI => 0}, # e.g., Module::Name => 1.1
 	      ($] >= 5.006 ?    ## Add these new keywords supported since 5.005
 	       (ABSTRACT_FROM => 'lib/MP3/Podcast.pm', # retrieve abstract from module
-		AUTHOR     => 'Juan Julian Merelo Guervos <jmerelo@geneura.ugr.es>') : ()),
+		AUTHOR     => 'Juan Julian Merelo Guervos <jjmerelo@gmail.com>') : ()),
 );
