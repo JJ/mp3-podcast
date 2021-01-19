@@ -18,7 +18,8 @@ $pod = MP3::Podcast->new($dir,'http://animaadversa.es');
 my $subdir = 'music';
 my $rss =  $pod->podcast($subdir, "Anima Adversa: El Otro Yo");
 isa_ok( $rss, 'XML::RSS' );
-is( $rss->{'items'}->[0]->{title}, 'Alter Ego', "RSS" );
-is( $rss->{'items'}->[1]->{title}, 'En tus Brazos', "RSS" );
+my $regex = qr/(Alter Ego|En tus Brazos)/;
+like( $rss->{'items'}->[0]->{title}, $regex, "RSS" );
+like( $rss->{'items'}->[1]->{title}, $regex, "RSS" );
 is( scalar(@{$rss->{'items'}}), 2, 'RSS items' );
 
